@@ -1,0 +1,740 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Cake 🎂</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial,sans-serif;
+}
+
+
+body{
+
+height:100vh;
+
+overflow:hidden;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+
+linear-gradient(
+135deg,
+#050505,
+#19000c,
+#5c0025,
+#ff174f
+);
+
+color:white;
+
+}
+
+
+
+/* BACKGROUND GLOW */
+
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:600px;
+
+height:600px;
+
+background:
+
+radial-gradient(
+circle,
+rgba(255,70,150,.4),
+transparent 70%
+);
+
+animation:
+
+glow 5s infinite alternate;
+
+}
+
+
+@keyframes glow{
+
+from{
+
+transform:scale(1);
+
+opacity:.5;
+
+}
+
+
+to{
+
+transform:scale(1.4);
+
+opacity:1;
+
+}
+
+}
+
+
+
+/* MAIN */
+
+.container{
+
+position:relative;
+
+z-index:5;
+
+text-align:center;
+
+}
+
+
+
+/* TITLE */
+
+
+h1{
+
+font-size:40px;
+
+margin-bottom:40px;
+
+text-shadow:
+
+0 0 15px #ff69b4,
+
+0 0 35px #ff174f;
+
+animation:
+
+titlePulse 2s infinite;
+
+}
+
+
+@keyframes titlePulse{
+
+50%{
+
+transform:scale(1.05);
+
+}
+
+}
+
+
+
+/* CAKE AREA */
+
+
+.cake{
+
+position:relative;
+
+width:260px;
+
+height:220px;
+
+margin:auto;
+
+animation:
+
+cakeBounce 3s infinite;
+
+}
+
+
+@keyframes cakeBounce{
+
+
+50%{
+
+transform:translateY(-15px);
+
+}
+
+
+}
+/* CAKE LAYERS */
+
+
+.layer{
+
+position:absolute;
+
+left:50%;
+
+transform:translateX(-50%);
+
+border-radius:15px;
+
+box-shadow:
+
+0 10px 20px rgba(0,0,0,.5);
+
+}
+
+
+.bottom-layer{
+
+bottom:0;
+
+width:250px;
+
+height:70px;
+
+background:
+
+linear-gradient(
+180deg,
+#ff7abf,
+#d40052
+);
+
+}
+
+
+.middle-layer{
+
+bottom:60px;
+
+width:210px;
+
+height:60px;
+
+background:
+
+linear-gradient(
+180deg,
+#ffb6dc,
+#ff3d91
+);
+
+}
+
+
+.top-layer{
+
+bottom:110px;
+
+width:160px;
+
+height:55px;
+
+background:
+
+linear-gradient(
+180deg,
+#ffffff,
+#ff8ac5
+);
+
+}
+
+
+
+/* ICING */
+
+
+.icing{
+
+position:absolute;
+
+width:100%;
+
+height:18px;
+
+top:-8px;
+
+background:
+
+linear-gradient(
+90deg,
+#fff,
+#ffd1e8
+);
+
+border-radius:50%;
+
+}
+
+
+/* CANDLES */
+
+
+.candles{
+
+position:absolute;
+
+top:-55px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+display:flex;
+
+gap:25px;
+
+}
+
+
+
+.candle{
+
+width:12px;
+
+height:55px;
+
+background:
+
+linear-gradient(
+90deg,
+#ff174f,
+#ff8ac5
+);
+
+border-radius:5px;
+
+position:relative;
+
+opacity:0;
+
+animation:
+
+riseCandle 1s forwards;
+
+}
+
+
+
+.candle:nth-child(1){
+
+animation-delay:.5s;
+
+}
+
+
+.candle:nth-child(2){
+
+animation-delay:1s;
+
+}
+
+
+.candle:nth-child(3){
+
+animation-delay:1.5s;
+
+}
+
+
+
+
+@keyframes riseCandle{
+
+
+from{
+
+transform:translateY(40px);
+
+opacity:0;
+
+}
+
+
+to{
+
+transform:translateY(0);
+
+opacity:1;
+
+}
+
+
+}
+
+
+
+/* FLAMES */
+
+
+.flame{
+
+position:absolute;
+
+top:-25px;
+
+left:50%;
+
+transform:translateX(-50%);
+
+width:16px;
+
+height:25px;
+
+background:
+
+linear-gradient(
+orange,
+yellow
+);
+
+border-radius:
+
+50% 50% 50% 0;
+
+rotate:45deg;
+
+animation:
+
+flicker .3s infinite alternate;
+
+box-shadow:
+
+0 0 15px orange,
+
+0 0 30px red;
+
+}
+
+
+@keyframes flicker{
+
+
+from{
+
+scale:1;
+
+}
+
+
+to{
+
+scale:1.25;
+
+}
+
+
+}
+
+
+
+/* BLOW TEXT */
+
+
+.blow{
+
+margin-top:
+</style>
+
+</head>
+
+
+<body>
+
+
+
+<div class="container">
+
+
+
+<h1>
+Happy Birthday Sholankini 🎂
+</h1>
+
+
+
+<div class="cake">
+
+
+
+<div class="candles">
+
+
+<div class="candle">
+
+<div class="flame"></div>
+
+</div>
+
+
+<div class="candle">
+
+<div class="flame"></div>
+
+</div>
+
+
+<div class="candle">
+
+<div class="flame"></div>
+
+</div>
+
+
+</div>
+
+
+
+
+<div class="layer top-layer">
+
+<div class="icing"></div>
+
+</div>
+
+
+
+<div class="layer middle-layer">
+
+<div class="icing"></div>
+
+</div>
+
+
+
+<div class="layer bottom-layer">
+
+<div class="icing"></div>
+
+</div>
+
+
+
+</div>
+
+
+
+
+<div class="blow">
+
+💨 Blow Me
+
+</div>
+
+
+
+<p id="status"
+
+style="
+margin-top:20px;
+color:#ffd1e8;
+">
+
+Allow microphone and blow gently
+
+</p>
+
+
+
+<button id="next"
+
+style="
+display:none;
+margin-top:25px;
+padding:12px 30px;
+border:none;
+border-radius:30px;
+background:#ff174f;
+color:white;
+font-size:18px;
+">
+
+Next Page →
+
+</button>
+
+
+
+</div>
+
+
+
+
+<script>
+
+
+const flames =
+document.querySelectorAll(".flame");
+
+
+const status =
+document.getElementById("status");
+
+
+const next =
+document.getElementById("next");
+
+
+
+let blown = false;
+
+
+
+async function startMic(){
+
+
+try{
+
+
+const stream =
+await navigator.mediaDevices.getUserMedia(
+{
+audio:true
+}
+);
+
+
+
+const audioContext =
+new AudioContext();
+
+
+
+const microphone =
+audioContext.createMediaStreamSource(stream);
+
+
+
+const analyser =
+audioContext.createAnalyser();
+
+
+
+microphone.connect(analyser);
+
+
+
+analyser.fftSize=256;
+
+
+
+const data =
+new Uint8Array(
+analyser.frequencyBinCount
+);
+
+
+
+function detect(){
+
+
+analyser.getByteFrequencyData(data);
+
+
+
+let volume =
+data.reduce(
+(a,b)=>a+b,
+0
+) / data.length;
+
+
+
+if(volume > 45 && !blown){
+
+
+blown=true;
+
+
+extinguish();
+
+
+}
+
+
+
+requestAnimationFrame(detect);
+
+
+}
+
+
+
+detect();
+
+
+
+status.innerHTML =
+"Blow into your microphone 💨";
+
+
+
+}
+
+catch(error){
+
+
+status.innerHTML =
+"Microphone permission required";
+
+
+}
+
+
+}
+
+
+
+function extinguish(){
+
+
+flames.forEach(
+flame=>{
+
+flame.style.display="none";
+
+}
+);
+
+
+
+status.innerHTML =
+"🎉 Happy Birthday! 🎉";
+
+
+
+next.style.display="inline-block";
+
+
+
+}
+
+
+
+startMic();
+
+
+
+next.onclick=function(){
+
+next.onclick=function(){
+
+window.location.href =
+"page3.html";
+
+};
