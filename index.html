@@ -1,0 +1,1021 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Happy Birthday Sholankini 🎂</title>
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial, sans-serif;
+}
+
+
+body{
+
+height:100vh;
+overflow:hidden;
+
+background:
+linear-gradient(
+135deg,
+#050505,
+#1b0010,
+#5a0025,
+#ff174f
+);
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+
+/* BACKGROUND */
+
+.background{
+
+position:absolute;
+inset:0;
+overflow:hidden;
+
+}
+
+
+.glow{
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:
+radial-gradient(
+circle,
+rgba(255,70,150,.4),
+transparent 70%
+);
+
+top:50%;
+left:50%;
+
+transform:
+translate(-50%,-50%);
+
+animation:
+pulse 5s infinite;
+
+}
+
+
+@keyframes pulse{
+
+0%,100%{
+
+scale:1;
+
+opacity:.5;
+
+}
+
+50%{
+
+scale:1.3;
+
+opacity:1;
+
+}
+
+}
+
+
+/* FLOATING HEARTS */
+
+
+.heart{
+
+position:absolute;
+
+bottom:-50px;
+
+color:#ff69b4;
+
+font-size:25px;
+
+animation:
+floatHeart 8s linear infinite;
+
+}
+
+
+@keyframes floatHeart{
+
+
+0%{
+
+transform:
+translateY(0)
+rotate(0deg);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+translateY(-120vh)
+rotate(360deg);
+
+opacity:0;
+
+}
+
+}
+/* SPARKLES */
+
+.sparkle{
+
+position:absolute;
+
+width:5px;
+
+height:5px;
+
+background:white;
+
+border-radius:50%;
+
+box-shadow:
+
+0 0 10px white,
+
+0 0 20px #ff69b4,
+
+0 0 30px #ff174f;
+
+animation:
+
+sparkle 2s infinite;
+
+}
+
+
+@keyframes sparkle{
+
+0%,100%{
+
+transform:scale(.3);
+
+opacity:.3;
+
+}
+
+
+50%{
+
+transform:scale(1.8);
+
+opacity:1;
+
+}
+
+}
+
+
+
+/* PARTICLES */
+
+
+.particle{
+
+position:absolute;
+
+width:7px;
+
+height:7px;
+
+border-radius:50%;
+
+background:#fff;
+
+box-shadow:
+
+0 0 10px #ff69b4;
+
+animation:
+
+particleMove 10s linear infinite;
+
+}
+
+
+@keyframes particleMove{
+
+
+0%{
+
+transform:
+translateY(100vh)
+scale(.2);
+
+opacity:0;
+
+}
+
+
+20%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+translateY(-120vh)
+scale(1.5);
+
+opacity:0;
+
+}
+
+
+}
+
+
+
+/* BALLOONS */
+
+
+.balloon{
+
+position:absolute;
+
+bottom:-120px;
+
+width:60px;
+
+height:75px;
+
+border-radius:50%;
+
+animation:
+
+balloonMove 12s linear infinite;
+
+filter:
+
+drop-shadow(
+0 0 15px #ff69b4
+);
+
+}
+
+
+.balloon:after{
+
+content:"";
+
+position:absolute;
+
+bottom:-35px;
+
+left:50%;
+
+width:2px;
+
+height:35px;
+
+background:white;
+
+}
+
+
+.balloon.red{
+
+background:
+
+linear-gradient(
+135deg,
+#ff174f,
+#700020
+);
+
+}
+
+
+.balloon.pink{
+
+background:
+
+linear-gradient(
+135deg,
+#ff9bd2,
+#ff3d91
+);
+
+}
+
+
+@keyframes balloonMove{
+
+
+0%{
+
+transform:
+
+translateY(0)
+rotate(-10deg);
+
+opacity:0;
+
+}
+
+
+10%{
+
+opacity:1;
+
+}
+
+
+100%{
+
+transform:
+
+translateY(-130vh)
+rotate(10deg);
+
+opacity:0;
+
+}
+
+}
+
+
+
+
+/* ENVELOPE */
+
+
+.envelope{
+
+width:340px;
+
+height:240px;
+
+perspective:1000px;
+
+z-index:5;
+
+}
+
+
+.card{
+
+width:100%;
+
+height:100%;
+
+position:relative;
+
+transform-style:preserve-3d;
+
+transition:
+
+1.2s;
+
+}
+
+
+.card.open{
+
+transform:
+
+rotateX(180deg);
+
+}
+
+
+.front,
+.back{
+
+position:absolute;
+
+inset:0;
+
+border-radius:25px;
+
+display:flex;
+
+flex-direction:column;
+
+justify-content:center;
+
+align-items:center;
+
+backface-visibility:hidden;
+
+}
+/* ENVELOPE FRONT */
+
+.front{
+
+background:
+
+linear-gradient(
+145deg,
+#250010,
+#8d0035
+);
+
+border:
+
+2px solid rgba(255,255,255,.15);
+
+
+box-shadow:
+
+0 0 30px rgba(255,40,120,.6),
+
+0 20px 60px rgba(0,0,0,.8);
+
+
+color:white;
+
+text-align:center;
+
+}
+
+
+.front h1{
+
+font-size:34px;
+
+text-shadow:
+
+0 0 15px #ff69b4,
+
+0 0 30px #ff174f;
+
+animation:
+
+textGlow 2s infinite;
+
+}
+
+
+
+.front p{
+
+margin-top:15px;
+
+font-size:16px;
+
+color:#ffd1e5;
+
+}
+
+
+
+/* RIBBON */
+
+
+.ribbon{
+
+font-size:45px;
+
+animation:
+
+floatRibbon 2s infinite;
+
+}
+
+
+
+@keyframes floatRibbon{
+
+
+0%,100%{
+
+transform:
+
+translateY(0);
+
+}
+
+
+50%{
+
+transform:
+
+translateY(-10px);
+
+}
+
+
+}
+
+
+
+/* TEXT GLOW */
+
+
+@keyframes textGlow{
+
+
+0%,100%{
+
+filter:
+
+brightness(1);
+
+}
+
+
+50%{
+
+filter:
+
+brightness(1.5);
+
+}
+
+
+}
+
+
+
+
+/* BACK SIDE */
+
+
+.back{
+
+background:
+
+linear-gradient(
+145deg,
+#090909,
+#420018
+);
+
+transform:
+
+rotateX(180deg);
+
+color:white;
+
+box-shadow:
+
+0 0 40px #ff174f;
+
+}
+
+
+
+.back h2{
+
+font-size:30px;
+
+color:#ff8ac5;
+
+}
+
+
+
+.back p{
+
+margin-top:15px;
+
+color:white;
+
+}
+
+
+
+
+/* OPEN BUTTON */
+
+
+.open-btn{
+
+margin-top:25px;
+
+padding:
+
+12px 30px;
+
+
+border:none;
+
+border-radius:30px;
+
+
+background:
+
+linear-gradient(
+90deg,
+#ff174f,
+#ff69b4
+);
+
+
+color:white;
+
+font-size:18px;
+
+cursor:pointer;
+
+
+box-shadow:
+
+0 0 20px #ff174f;
+
+
+}
+
+
+
+.open-btn:hover{
+
+transform:
+
+scale(1.1);
+
+}
+
+
+
+/* RESPONSIVE */
+
+
+@media(max-width:600px){
+
+body{
+
+overflow:hidden;
+
+}
+
+.envelope{
+
+width:290px;
+
+height:210px;
+
+}
+
+
+.front h1{
+
+font-size:28px;
+
+}
+
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- Animated Background Elements -->
+
+<div class="background">
+
+
+<div class="glow"></div>
+
+
+</div>
+
+
+
+<!-- Hearts -->
+
+<div class="heart" style="left:10%;animation-delay:0s;">
+❤️
+</div>
+
+
+<div class="heart" style="left:25%;animation-delay:2s;">
+💗
+</div>
+
+
+<div class="heart" style="left:45%;animation-delay:4s;">
+❤️
+</div>
+
+
+<div class="heart" style="left:70%;animation-delay:1s;">
+💖
+</div>
+
+
+<div class="heart" style="left:85%;animation-delay:3s;">
+❤️
+</div>
+
+
+
+
+<!-- Sparkles -->
+
+
+<div class="sparkle" style="left:15%;top:20%;"></div>
+
+<div class="sparkle" style="left:35%;top:70%;animation-delay:1s;"></div>
+
+<div class="sparkle" style="left:60%;top:30%;animation-delay:.5s;"></div>
+
+<div class="sparkle" style="left:80%;top:60%;animation-delay:1.5s;"></div>
+
+
+
+
+<!-- Particles -->
+
+
+<div class="particle" style="left:20%;animation-delay:1s;"></div>
+
+<div class="particle" style="left:50%;animation-delay:3s;"></div>
+
+<div class="particle" style="left:75%;animation-delay:5s;"></div>
+
+
+
+
+<!-- Balloons -->
+
+
+<div class="balloon red" 
+style="left:15%;animation-delay:1s;">
+</div>
+
+
+<div class="balloon pink" 
+style="left:80%;animation-delay:4s;">
+</div>
+
+
+
+<!-- Envelope -->
+
+
+<div class="envelope" id="envelope">
+
+
+<div class="card" id="card">
+
+
+<div class="front">
+
+
+<div class="ribbon">
+🎀
+</div>
+
+
+<h1>
+Click Me
+</h1>
+
+
+<p>
+A special birthday surprise
+</p>
+
+
+</div>
+
+
+
+
+
+<div class="back">
+
+
+<h2>
+Happy Birthday ❤️
+</h2>
+
+
+<p>
+Opening your surprise...
+</p>
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+<script>
+
+
+const card =
+document.getElementById("card");
+
+
+const envelope =
+document.getElementById("envelope");
+
+
+
+let opened = false;
+
+
+
+envelope.addEventListener("click",()=>{
+
+
+if(opened) return;
+
+
+opened = true;
+
+
+
+card.classList.add("open");
+
+
+
+setTimeout(()=>{
+
+
+window.location.href =
+"cake.html";
+
+
+
+},1800);
+
+
+
+});
+
+
+
+/* Extra floating hearts generator */
+
+
+function createHeart(){
+
+
+const heart =
+document.createElement("div");
+
+
+heart.className =
+"heart";
+
+
+heart.innerHTML =
+"❤️";
+
+
+
+heart.style.left =
+Math.random()*100+"%";
+
+
+
+heart.style.animationDuration =
+(5+Math.random()*5)+"s";
+
+
+
+heart.style.fontSize =
+(15+Math.random()*25)+"px";
+
+
+
+document.body.appendChild(heart);
+
+
+
+setTimeout(()=>{
+
+
+heart.remove();
+
+
+},10000);
+
+
+
+}
+
+
+
+setInterval(createHeart,800);
+
+
+
+
+
+/* Sparkle generator */
+
+
+function createSparkle(){
+
+
+const sparkle =
+document.createElement("div");
+
+
+sparkle.className =
+"sparkle";
+
+
+sparkle.style.left =
+Math.random()*100+"%";
+
+
+sparkle.style.top =
+Math.random()*100+"%";
+
+
+sparkle.style.animationDuration =
+(1+Math.random()*2)+"s";
+
+
+
+document.body.appendChild(sparkle);
+
+
+
+setTimeout(()=>{
+
+
+sparkle.remove();
+
+
+
+},3000);
+
+
+
+}
+
+
+
+setInterval(createSparkle,500);
+
+
+
+</script>
+<script>
+
+
+/* Mobile friendly tap animation */
+
+
+document.addEventListener(
+"touchstart",
+function(){
+
+document.body.style.cursor="pointer";
+
+},
+{passive:true}
+);
+
+
+
+</script>
+
+
+</body>
+
+
+</html>
