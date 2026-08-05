@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Party Celebration 🎉</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;900&display=swap" rel="stylesheet">
+
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+
+html,body{
+
+width:100%;
+height:100%;
+
+overflow:hidden;
+
+}
+
+
+
+body{
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+background:
+
+linear-gradient(
+135deg,
+#030006,
+#12001f,
+#300044,
+#70004f,
+#ff0066
+);
+
+position:relative;
+
+}
+
+
+/* =========================
+GALAXY GLOW
+========================= */
+
+
+body::before{
+
+content:"";
+
+position:absolute;
+
+width:120%;
+
+height:120%;
+
+left:-10%;
+
+top:-10%;
+
+
+background:
+
+
+radial-gradient(
+circle at 20% 20%,
+rgba(255,255,255,.15),
+transparent 25%
+),
+
+
+radial-gradient(
+circle at 80% 30%,
+rgba(255,0,150,.35),
+transparent 35%
+),
+
+
+radial-gradient(
+circle at 30% 80%,
+rgba(0,220,255,.25),
+transparent 35%
+);
+
+
+filter:blur(20px);
+
+
+animation:
+
+galaxyMove 12s infinite alternate;
+
+
+}
+
+
+
+@keyframes galaxyMove{
+
+
+from{
+
+transform:scale(1) rotate(0deg);
+
+}
+
+
+to{
+
+transform:scale(1.25) rotate(10deg);
+
+}
+
+}
+
+
+
+/* =========================
+AURORA LIGHT
+========================= */
+
+
+body::after{
+
+content:"";
+
+position:absolute;
+
+inset:0;
+
+
+background:
+
+linear-gradient(
+120deg,
+transparent,
+rgba(255,0,180,.15),
+transparent,
+rgba(0,255,255,.1),
+transparent
+);
+
+
+animation:
+
+aurora 8s linear infinite;
+
+
+}
+
+
+@keyframes aurora{
+
+
+from{
+
+transform:translateX(-100%);
+
+}
+
+
+to{
+
+transform:translateX(100%);
+
+}
+
+}
+
+
+
+/* =========================
+LAYERS
+========================= */
+
+
+#stars,
+#sparkles,
+#hearts,
+#balloons,
+#confetti,
+#fireworks,
+#emoji{
+
+
+position:fixed;
+
+left:0;
+
+top:0;
+
+width:100%;
+
+height:100%;
+
+overflow:hidden;
+
+pointer-events:none;
+
+z-index:2;
+
+
+}
+
+
+
+/* =========================
+MAIN CARD
+========================= */
+
+
+.container{
+
+
+position:relative;
+
+z-index:10;
+
+
+width:90%;
+
+max-width:700px;
+
+
+padding:45px;
+
+
+border-radius:40px;
+
+
+background:
+
+rgba(255,255,255,.08);
+
+
+backdrop-filter:
+
+blur(20px);
+
+
+border:
+
+1px solid rgba(255,255,255,.2);
+
+
+box-shadow:
+
+0 0 50px rgba(255,0,120,.5);
+
+
+text-align:center;
+
+
+animation:
+
+cardIn 1.5s ease;
+
+
+}
+
+
+
+@keyframes cardIn{
+
+
+from{
+
+opacity:0;
+
+transform:
+
+translateY(80px)
+scale(.7);
+
+}
+
+
+to{
+
+opacity:1;
+
+transform:
+
+translateY(0)
+scale(1);
+
+}
+
+
+}
+
+
+
+/* =========================
+TITLE
+========================= */
+
+
+#partyTitle{
+
+
+font-size:
+
+clamp(40px,8vw,75px);
+
+
+font-weight:900;
+
+
+color:white;
+
+
+text-shadow:
+
+
+0 0 20px hotpink,
+
+0 0 50px deeppink,
+
+0 0 100px red;
+
+
+animation:
+
+titlePulse 2s infinite;
+
+
+}
+
+
+@keyframes titlePulse{
+
+
+50%{
+
+transform:scale(1.08);
+
+}
+
+}
+ 
+/* =========================
+SUBTITLE
+========================= */
+
+#subtitle{
+
+margin-top:20px;
+
+font-size:clamp(20px,4vw,32px);
+
+font-weight:700;
+
+color:#ffe6f5;
+
+opacity:0;
+
+}
+
+
+
+/* =========================
+MESSAGE
+========================= */
+
+
+#message{
+
+margin-top:30px;
+
+font-size:clamp(16px,3vw,23px);
+
+line-height:1.8;
+
+color:white;
+
+opacity:0;
+
+}
+
+
+
+/* =========================
+BUTTON
+========================= */
+
+
+#nextBtn{
+
+
+display:none;
+
+
+margin-top:40px;
+
+
+padding:16px 50px;
+
+
+border:none;
+
+
+border-radius:50px;
+
+
+font-size:20px;
+
+
+font-weight:800;
+
+
+color:white;
+
+
+cursor:pointer;
+
+
+
+background:
+
+linear-gradient(
+
+90deg,
+
+#ff0066,
+
+#ff7ac3
+
+);
+
+
+
+box-shadow:
+
+0 0 30px hotpink;
+
+
+transition:.3s;
+
+
+}
+
+
+
+#nextBtn:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+/* =========================
+MOBILE
+========================= */
+
+
+@media(max-width:700px){
+
+
+.container{
+
+padding:25px;
+
+border-radius:30px;
+
+}
+
+
+#partyTitle{
+
+font-size:42px;
+
+}
+
+
+#message{
+
+font-size:18px;
+
+}
+
+
+#nextBtn{
+
+font-size:17px;
+
+padding:14px 35px;
+
+}
+
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- EFFECT LAYERS -->
+
+
+<div id="stars"></div>
+
+<div id="sparkles"></div>
+
+<div id="hearts"></div>
+
+<div id="balloons"></div>
+
+<div id="confetti"></div>
+
+<div id="fireworks"></div>
+
+<div id="emoji"></div>
+
+
+
+<!-- MAIN CARD -->
+
+
+<div class="container">
+
+
+<h1 id="partyTitle">
+
+🥳 PARTY TIMEEE!! 🥳
+
+</h1>
+
+
+
+<h2 id="subtitle">
+
+🎉 Happy Birthday Sholankini 🎉
+
+</h2>
+
+
+
+<div id="message">
+
+
+🎂 Today is all about YOU! 🎂
+
+
+<br><br>
+
+
+✨ May your smile shine brighter than the stars.
+
+
+<br><br>
+
+
+💖 May every dream become reality.
+
+
+<br><br>
+
+
+🎁 May this year bring endless happiness and unforgettable memories.
+
+
+</div>
+
+
+
+<button id="nextBtn">
+
+Continue →
+
+</button>
+
+
+</div>
+<script>
+
+
+// =======================================
+// ELEMENTS
+// =======================================
+
+
+const stars =
+document.getElementById("stars");
+
+
+const sparkle =
+document.getElementById("sparkles");
+
+
+const hearts =
+document.getElementById("hearts");
+
+
+const balloons =
+document.getElementById("balloons");
+
+
+const confetti =
+document.getElementById("confetti");
+
+
+const fireworks =
+document.getElementById("fireworks");
+
+
+const emoji =
+document.getElementById("emoji");
+
+
+const subtitle =
+document.getElementById("subtitle");
+
+
+const message =
+document.getElementById("message");
+
+
+const nextBtn =
+document.getElementById("nextBtn");
+
+
+
+
+
+// =======================================
+// INTRO ANIMATION
+// =======================================
+
+
+setTimeout(()=>{
+
+
+subtitle.animate([
+
+{
+opacity:0,
+transform:"translateY(40px)"
+},
+
+{
+opacity:1,
+transform:"translateY(0)"
+}
+
+],{
+
+duration:1200,
+
+fill:"forwards"
+
+});
+
+
+
+message.animate([
+
+{
+opacity:0,
+transform:"translateY(60px)"
+},
+
+{
+opacity:1,
+transform:"translateY(0)"
+}
+
+],{
+
+duration:1600,
+
+fill:"forwards"
+
+});
+
+
+},700);
+
+
+
+
+
+
+
+// =======================================
+// CREATE STARS
+// =======================================
+
+
+createStars();
+
+
+
+function createStars(){
+
+
+for(let i=0;i<180;i++){
+
+
+const star=document.createElement("div");
+
+
+star.style.position="absolute";
+
+
+star.style.left=Math.random()*100+"vw";
+
+
+star.style.top=Math.random()*100+"vh";
+
+
+let size=2+Math.random()*3;
+
+
+star.style.width=size+"px";
+
+
+star.style.height=size+"px";
+
+
+star.style.borderRadius="50%";
+
+
+star.style.background="white";
+
+
+stars.appendChild(star);
+
+
+
+star.animate([
+
+{
+opacity:.2,
+transform:"scale(.5)"
+},
+
+{
+opacity:1,
+transform:"scale(1.8)"
+},
+
+{
+opacity:.2,
+transform:"scale(.5)"
+}
+
+],{
+
+duration:1500+Math.random()*3500,
+
+iterations:Infinity
+
+});
+
+
+}
+
+
+}
+// =======================================
+// EMOJI RAIN
+// =======================================
+
+
+const emojis=[
+
+"🥳",
+"🎉",
+"🎊",
+"🎂",
+"🎁",
+"🎈",
+"✨",
+"💖",
+"🍰"
+
+];
+
+
+setInterval(createEmoji,300);
+
+
+
+function createEmoji(){
+
+
+const e=document.createElement("div");
+
+
+e.innerHTML=
+emojis[Math.floor(Math.random()*emojis.length)];
+
+
+e.style.position="absolute";
+
+
+e.style.left=Math.random()*100+"vw";
+
+
+e.style.top="-50px";
+
+
+e.style.fontSize=
+(24+Math.random()*22)+"px";
+
+
+emoji.appendChild(e);
+
+
+
+const drift=(Math.random()-.5)*250;
+
+
+
+e.animate([
+
+{
+
+transform:
+"translate(0,0) rotate(0deg)",
+
+opacity:1
+
+},
+
+{
+
+transform:
+`translate(${drift}px,120vh)
+rotate(${Math.random()*720}deg)`,
+
+opacity:0
+
+}
+
+],{
+
+duration:5000+Math.random()*2500,
+
+fill:"forwards",
+
+easing:"linear"
+
+});
+
+
+
+setTimeout(()=>{
+
+e.remove();
+
+},7500);
+
+
+}
+
+
+
+
+
+// =======================================
+// FLOATING HEARTS
+// =======================================
+
+
+setInterval(createHeart,450);
+
+
+
+function createHeart(){
+
+
+const heart=document.createElement("div");
+
+
+heart.innerHTML="💖";
+
+
+heart.style.position="absolute";
+
+
+heart.style.left=Math.random()*100+"vw";
+
+
+heart.style.bottom="-40px";
+
+
+heart.style.fontSize=
+(20+Math.random()*25)+"px";
+
+
+
+hearts.appendChild(heart);
+
+
+
+heart.animate([
+
+
+{
+
+transform:
+"translateY(0) scale(.5)",
+
+opacity:0
+
+},
+
+
+{
+
+opacity:1
+
+},
+
+
+{
+
+transform:
+"translateY(-120vh) scale(1.6)",
+
+opacity:0
+
+}
+
+],{
+
+
+duration:5500,
+
+fill:"forwards"
+
+});
+
+
+
+setTimeout(()=>{
+
+heart.remove();
+
+},5500);
+
+
+}
+
+
+
+
+
+
+// =======================================
+// SPARKLE RAIN
+// =======================================
+
+
+setInterval(createSparkle,150);
+
+
+
+function createSparkle(){
+
+
+const s=document.createElement("div");
+
+
+s.innerHTML="✨";
+
+
+s.style.position="absolute";
+
+
+s.style.left=Math.random()*100+"vw";
+
+
+s.style.top="-20px";
+
+
+s.style.fontSize=
+(14+Math.random()*12)+"px";
+
+
+sparkle.appendChild(s);
+
+
+
+s.animate([
+
+{
+
+transform:"translateY(0)",
+
+opacity:1
+
+},
+
+{
+
+transform:"translateY(120vh)",
+
+opacity:0
+
+}
+
+],{
+
+duration:3500,
+
+fill:"forwards"
+
+});
+
+
+
+setTimeout(()=>{
+
+s.remove();
+
+},3500);
+
+
+}
+
+// =======================================
+// PARTY INTRO POPUP
+// =======================================
+
+setTimeout(()=>{
+
+const intro=document.createElement("div");
+
+intro.innerHTML="🎉 LET'S PARTY!! 🥳";
+
+
+intro.style.position="fixed";
+intro.style.left="50%";
+intro.style.top="15%";
+intro.style.transform="translateX(-50%)";
+
+intro.style.fontSize="clamp(35px,6vw,70px)";
+intro.style.fontWeight="900";
+
+intro.style.color="white";
+
+intro.style.textShadow=
+"0 0 20px hotpink,0 0 60px deeppink,0 0 100px red";
+
+intro.style.zIndex="9999";
+
+intro.style.pointerEvents="none";
+
+
+document.body.appendChild(intro);
+
+
+
+intro.animate([
+
+{
+opacity:0,
+transform:"translate(-50%,40px) scale(.5)"
+},
+
+{
+opacity:1,
+transform:"translate(-50%,0) scale(1.2)"
+},
+
+{
+opacity:1,
+transform:"translate(-50%,0) scale(1)"
+},
+
+{
+opacity:0,
+transform:"translate(-50%,-40px) scale(1.3)"
+}
+
+],{
+
+duration:2600,
+
+fill:"forwards",
+
+easing:"ease-out"
+
+});
+
+
+
+setTimeout(()=>{
+
+intro.remove();
+
+},2600);
+
+
+
+},1200);
+
+
+
+
+
+
+// =======================================
+// SHOW CONTINUE BUTTON
+// =======================================
+
+
+setTimeout(()=>{
+
+
+nextBtn.style.display="inline-block";
+
+
+nextBtn.animate([
+
+{
+opacity:0,
+transform:"translateY(40px) scale(.8)"
+},
+
+{
+opacity:1,
+transform:"translateY(0) scale(1)"
+}
+
+],{
+
+duration:900,
+
+fill:"forwards"
+
+});
+
+
+},3500);
+
+
+
+
+
+
+// =======================================
+// BUTTON CLICK EFFECT
+// =======================================
+
+
+nextBtn.addEventListener("click",()=>{
+
+
+nextBtn.animate([
+
+{
+transform:"scale(1)"
+},
+
+{
+transform:"scale(.85)"
+},
+
+{
+transform:"scale(1.15)"
+},
+
+{
+transform:"scale(1)"
+}
+
+],{
+
+duration:350
+
+});
+
+
+
+setTimeout(()=>{
+
+
+window.location.href="page4.html";
+
+
+},350);
+
+
+
+});
