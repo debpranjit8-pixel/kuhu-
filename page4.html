@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Do You Still Love Ishanjit???</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@700&family=Plus+Jakarta+Sans:wght@700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        /* -----------------------------------------------------------
+           1. Animated Background "Color Pop-ups" (Pulsing Orbs)
+           ----------------------------------------------------------- */
+        .background-animations {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            z-index: 0;
+            pointer-events: none; /* Allows clicks to pass through to buttons */
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px); /* Creates a soft, glowing light effect */
+            opacity: 0; /* Starts invisible */
+            animation: orbPopUp 10s infinite ease-in-out;
+        }
+
+        /* Orb Colours and Starting Positions */
+        .orb-1 {
+            width: 400px;
+            height: 400px;
+            background: rgba(255, 0, 85, 0.4); /* Pure Red-Pink */
+            top: -100px;
+            left: -100px;
+            animation-delay: 0s;
+        }
+
+        .orb-2 {
+            width: 500px;
+            height: 500px;
+            background: rgba(255, 50, 50, 0.3); /* Lighter Red */
+            bottom: -150px;
+            right: -100px;
+            animation-delay: 3s;
+        }
+
+        .orb-3 {
+            width: 300px;
+            height: 300px;
+            background: rgba(150, 0, 50, 0.5); /* Deep Red */
+            top: 60%;
+            left: 20%;
+            animation-delay: 6s;
+        }
+
+        /* The Animation: Orbs scale up, fade in, drift, and fade out */
+        @keyframes orbPopUp {
+            0% { transform: scale(0.5) translate(0, 0); opacity: 0; }
+            20% { transform: scale(1) translate(20px, 10px); opacity: 0.8; }
+            50% { transform: scale(1.1) translate(-10px, -20px); opacity: 0.5; }
+            80% { transform: scale(1) translate(10px, 0px); opacity: 0.7; }
+            100% { transform: scale(0.5) translate(0, 0); opacity: 0; }
+        }
+
+        /* -----------------------------------------------------------
+           2. Text and Button Styling
+           ----------------------------------------------------------- */
+        .container {
+            position: relative;
+            z-index: 1; /* Sits above the background animations */
+            text-align: center;
+            max-width: 900px;
+            width: 90%;
+            padding: 40px 20px;
+        }
+
+        /* Animated Title Text ("Do You Still Love Ishanjit???") */
+        .question-wrapper {
+            font-family: 'Cinzel', serif;
+            font-size: clamp(2.2rem, 5vw, 4rem);
+            font-weight: 700;
+            min-height: 180px;
+            margin-bottom: 50px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            line-height: 1.3;
+            letter-spacing: 2px;
+            text-shadow: 0 0 20px rgba(255, 0, 85, 0.3);
+        }
+
+        /* "One by one" character animation settings */
+        .char {
+            opacity: 0;
+            display: inline-block;
+            transform: translateY(15px) scale(0.95);
+            animation: textAppear 0.4s cubic-bezier(0.2, 0.6, 0.3, 1) forwards;
+        }
+
+        .space {
+            width: 0.35em;
+        }
+
+        /* Highlight "Ishanjit" and Question Marks in Red Glow */
+        .highlight-red {
+            color: #ff0055;
+            text-shadow: 0 0 25px rgba(255, 0, 85, 0.8), 0 0 50px rgba(255, 0, 85, 0.4);
+        }
+
+        @keyframes textAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+
+        /* Buttons Styling (Highlighted with Black and Red) */
+        .btn-group {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+            opacity: 0; /* Starts hidden, revealed by JS */
+            transform: translateY(30px);
+            transition: opacity 1s cubic-bezier(0.16, 1, 0.3, 1), transform 1s cubic-bezier(0.16, 1, 0.3, 1);
+            pointer-events: none; /* Prevents clicks while hidden */
+        }
+
+        .btn-group.visible {
+            opacity: 1;
+            transform: translateY(0);
+            pointer-events: auto; /* Enables clicks after animation */
+        }
+
+        .btn {
+            position: relative;
+            background: #000000; /* Black Background */
+            color: #ffffff;
+            border: 3px solid #ff0055; /* Solid Red Border */
+            padding: 18px 55px;
+            font-size: 1.5rem;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            border-radius: 50px;
+            outline: none;
+            overflow: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            box-shadow: 0 0 20px rgba(255, 0, 85, 0.35), inset 0 0 15px rgba(255, 0, 85, 0.15);
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        /* Hover State: Fills with Red, glows intensely */
+        .btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            background-color: #ff0055; /* Fills Black area with Red */
+            border-color: #ff2a6d; /* Lighter red border on hover */
+            box-shadow: 0 0 40px rgba(255, 0, 85, 0.9), 0 0 80px rgba(255, 0, 85, 0.5);
+            color: #ffffff;
+        }
+
+        /* Click State: Slightly shrinks */
+        .btn:active {
+            transform: translateY(-2px) scale(0.98);
+        }
+
+        /* Mobile Optimization */
+        @media (max-width: 600px) {
+            .btn-group {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            .btn {
+                width: 80%;
+                padding: 16px 0;
+                font-size: 1.2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 1. Background Animation Layer -->
+    <div class="background-animations">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+    </div>
+
+    <!-- 2. Main Content Layer -->
+    <div class="container">
+        <div class="question-wrapper" id="animatedText"></div>
+        <div class="btn-group" id="btnGroup">
+            <!-- Yes redirects to page 6 / No redirects to page 5 -->
+            <a href="page6.html" class="btn">Yes</a>
+            <a href="page5.html" class="btn">No</a>
+        </div>
+    </div>
+
+    <script>
+        // The text to display
+        const questionText = "do you still love Ishanjit???";
+        const container = document.getElementById('animatedText');
+        const btnGroup = document.getElementById('btnGroup');
+        const delayBetweenChars = 90; // Milliseconds of delay per character (typing speed)
+
+        const totalChars = questionText.length;
+
+        /* -----------------------------------------------------------
+           JavaScript for One-by-One Text Animation
+           ----------------------------------------------------------- */
+        // Split text into characters and create individual span elements for each
+        questionText.split('').forEach((char, index) => {
+            const span = document.createElement('span');
+
+            if (char === ' ') {
+                span.className = 'space'; // Handles spaces correctly
+            } else {
+                span.className = 'char';
+                span.textContent = char;
+                // Applies an incremental delay to each character
+                span.style.animationDelay = `${index * delayBetweenChars}ms`;
+
+                // Add Red Highlight class to "Ishanjit" (index 17-24) and Question Marks (25-27)
+                if ((index >= 17 && index <= 24) || char === '?') {
+                    span.classList.add('highlight-red');
+                }
+            }
+
+            container.appendChild(span);
+        });
+
+        // Calculate the total animation time to reveal the buttons afterwards
+        // (total letters * speed) + some extra breathing room
+        const animationTotalTime = (totalChars * delayBetweenChars) + 300;
+        
+        // Show buttons after text finishes printing
+        setTimeout(() => {
+            btnGroup.classList.add('visible');
+        }, animationTotalTime);
+    </script>
+
+</body>
+</html>
