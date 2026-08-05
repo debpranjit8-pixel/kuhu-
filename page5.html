@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Hey Liar 😡</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+
+body{
+
+height:100vh;
+
+background:#050505;
+
+color:white;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+overflow:hidden;
+
+}
+
+
+/* dark glowing background */
+
+.glow{
+
+position:absolute;
+
+width:350px;
+
+height:350px;
+
+background:#700020;
+
+filter:blur(120px);
+
+border-radius:50%;
+
+animation:move 6s infinite alternate;
+
+}
+
+
+@keyframes move{
+
+from{
+
+transform:translate(-100px,-100px);
+
+}
+
+to{
+
+transform:translate(100px,100px);
+
+}
+
+}
+
+
+
+
+.container{
+
+position:relative;
+
+z-index:2;
+
+text-align:center;
+
+width:90%;
+
+}
+
+
+
+.text{
+
+font-size:clamp(2rem,5vw,3.5rem);
+
+font-weight:800;
+
+line-height:1.5;
+
+}
+
+
+
+.word{
+
+display:inline-block;
+
+opacity:0;
+
+transform:translateY(30px);
+
+animation:appear .5s forwards;
+
+margin:0 6px;
+
+}
+
+
+
+.red{
+
+color:#ff003c;
+
+text-shadow:
+
+0 0 20px #ff003c,
+
+0 0 40px #ff003c;
+
+}
+
+
+
+@keyframes appear{
+
+to{
+
+opacity:1;
+
+transform:translateY(0);
+
+}
+
+}
+
+
+
+button{
+
+margin-top:50px;
+
+padding:18px 60px;
+
+background:#000;
+
+color:white;
+
+border:3px solid #ff003c;
+
+border-radius:50px;
+
+font-size:1.3rem;
+
+font-weight:800;
+
+cursor:pointer;
+
+box-shadow:0 0 25px #ff003c;
+
+animation:pulse 2s infinite;
+
+transition:.4s;
+
+}
+
+
+button:hover{
+
+background:#ff003c;
+
+transform:scale(1.1);
+
+}
+
+
+
+@keyframes pulse{
+
+50%{
+
+box-shadow:0 0 50px #ff003c;
+
+}
+
+}
+
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="glow"></div>
+
+
+
+<div class="container">
+
+
+<div class="text" id="text"></div>
+
+
+
+<button onclick="location.href='page4.html'">
+
+GO BACK
+
+</button>
+
+
+</div>
+
+
+
+
+<script>
+
+
+const message = 
+"Haey Liarr😡😡 I know u love Ishanjit Go and click yes😡😡😡";
+
+
+const box=document.getElementById("text");
+
+
+let delay=0;
+
+
+message.split(" ").forEach(word=>{
+
+
+let span=document.createElement("span");
+
+
+span.className="word";
+
+span.innerHTML=word;
+
+
+span.style.animationDelay=`${delay}ms`;
+
+
+
+if(word.includes("Liarr") || word.includes("Ishanjit") || word.includes("😡")){
+
+span.classList.add("red");
+
+}
+
+
+
+box.appendChild(span);
+
+
+delay+=300;
+
+
+});
+
+
+
+</script>
+
+
+</body>
+</html>
